@@ -1,0 +1,25 @@
+.container {
+	height: 3rem;
+	padding: 1rem;
+	color: var(--primary);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.link {
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		height: 6rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container {
+		padding: 5rem;
+	}
+}

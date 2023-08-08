@@ -1,0 +1,103 @@
+.container {
+	width: 100vw;
+	overflow-x: scroll;
+	color: var(--primary);
+}
+
+
+.wrapper {
+	width: max-content;
+	display: flex;
+}
+
+.item {
+	width: 100vw;
+	height: 60vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 1rem;
+	cursor: pointer;
+	-webkit-transition: .15s background-color ease-in;
+	-moz-transition: .15s background-color ease-in;
+	-o-transition: .15s background-color ease-in;
+	transition: .15s background-color ease-in;
+}
+
+.item:hover {
+	background-color: var(--secondary);
+}
+
+.imgContainer {
+	position: relative;
+	flex: 1;
+	width: 100%;
+}
+
+.img {
+	-webkit-transition: .3s transform ease-in-out;
+	-moz-transition: .3s transform ease-in-out;
+	-o-transition: .3s transform ease-in-out;
+	transition: .3s transform ease-in-out;
+}
+
+.img:hover {
+	transform: rotate(90deg);
+}
+
+.img {
+	object-fit: contain;
+}
+
+.textContainer {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 1rem;
+}
+
+.title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.desc {
+	padding: 1rem;
+}
+
+.price {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+	.item {
+		width: 50vw;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.item {
+		width: 33vw;
+		height: 90vh;
+	}
+
+	.title {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	.title {
+		font-size: 1.875rem;
+	}
+
+	.desc {
+		padding: 2rem;
+	}
+}

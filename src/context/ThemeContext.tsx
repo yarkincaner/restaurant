@@ -9,7 +9,7 @@ type ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType>({
 	toggle: () => {},
-	mode: "light",
+	mode: "dark",
 });
 
 interface IProvider {
@@ -17,7 +17,7 @@ interface IProvider {
 }
 
 export const ThemeProvider = ({ children }: IProvider) => {
-	const [mode, setMode] = useState<"dark" | "light">("light");
+	const [mode, setMode] = useState<"dark" | "light">("dark");
 
 	const toggle = () => {
 		setMode((prev) => (prev === "dark" ? "light" : "dark"));
