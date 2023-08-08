@@ -1,0 +1,79 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 3rem;
+	padding: 1rem;
+	border-bottom: .125rem solid var(--primary);
+}
+
+.navItems {
+	display: none;
+	gap: 1rem;
+}
+
+.navItem {
+	-webkit-transition: .15s color ease, .15s background-color ease;
+  -moz-transition: .15s color ease, .15s background-color ease;
+  -o-transition: .15s color ease, .15s background-color ease;
+	transition: .15s color ease, .15s background-color ease;
+}
+
+.navItem:hover {
+	color: var(--primary);
+}
+
+.logoContainer {
+	flex: 1;
+	text-align: center;
+}
+
+.phone {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .2rem;
+	cursor: pointer;
+	color: var(--background);
+	background-color: var(--primary);
+	border-radius: .5rem;
+	padding: .25rem;
+	transition: .15s border-radius ease;
+}
+
+.phone:hover {
+	border-radius: 0;
+}
+
+@media (min-width: 768px) {
+	.container {
+		height: 6rem;
+	}
+
+  .navItems {
+    display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+  }
+
+	.logo {
+		font-weight: bold;
+	}
+
+	.phone {
+		position: absolute;
+		top: .75rem;
+		right: .5rem;
+	}
+
+	.menu {
+		display: none;
+	}
+}
+
+@media (min-width: 1024px) {
+	.phone {
+		position: static;
+	}
+}
