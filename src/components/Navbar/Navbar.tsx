@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Menu } from "..";
+import { Menu, ThemeSwitcher } from "..";
 import styles from "./component.module.css";
 import CartIcon from "../CartIcon/CartIcon";
 import Image from "next/image";
@@ -48,6 +48,7 @@ const Navbar = (props: Props) => {
 					</Link>
 				)}
 				<CartIcon />
+				<ThemeSwitcher />
 			</div>
 		</div>
 	);

@@ -27,23 +27,13 @@ const Menu = (props: Props) => {
 
 	return (
 		<div>
-			{open ? (
-				<Image
-					src="/close.png"
-					alt=""
-					width={20}
-					height={20}
-					onClick={handleClick}
-				/>
-			) : (
-				<Image
-					src="/open.png"
-					alt=""
-					width={20}
-					height={20}
-					onClick={handleClick}
-				/>
-			)}
+			<Image
+				src={open ? "/close.png" : "/open.png"}
+				alt=""
+				width={20}
+				height={20}
+				onClick={handleClick}
+			/>
 			{open && (
 				<div className={styles.menuContainer}>
 					{links.map((item) => (
