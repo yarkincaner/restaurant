@@ -1,7 +1,7 @@
-"use client";
-import Image from "next/image";
-import styles from "./component.module.css";
-import { useEffect, useState } from "react";
+"use client"
+import Image from "next/image"
+import styles from "./component.module.css"
+import { useEffect, useState } from "react"
 
 const data = [
 	{
@@ -19,23 +19,23 @@ const data = [
 		title: "the best pizza to share with your family",
 		image: "/slide3.jpg",
 	},
-];
+]
 
-type Props = {};
+type Props = {}
 
 const Slider = (props: Props) => {
-	const [currentSlide, setCurrentSlide] = useState(0);
+	const [currentSlide, setCurrentSlide] = useState(0)
 
 	// SLIDER ANIMATION
-	// useEffect(() => {
-	// 	const interval = setInterval(
-	// 		() =>
-	// 			setCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1)),
-	// 		2000
-	// 	);
+	useEffect(() => {
+		const interval = setInterval(
+			() =>
+				setCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1)),
+			3000
+		)
 
-	// 	return () => clearInterval(interval);
-	// }, []);
+		return () => clearInterval(interval)
+	}, [])
 
 	return (
 		<div className={styles.container}>
@@ -47,7 +47,7 @@ const Slider = (props: Props) => {
 				<Image src={data[currentSlide].image} alt="" fill />
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Slider;
+export default Slider

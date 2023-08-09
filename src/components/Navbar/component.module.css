@@ -73,7 +73,16 @@
 }
 
 @media (min-width: 1024px) {
+	.container {
+		padding: 0 5rem;
+	}
 	.phone {
 		position: static;
+	}
+}
+
+@media (min-width: 1280px) {
+	.container {
+		padding: 0 10rem;
 	}
 }
