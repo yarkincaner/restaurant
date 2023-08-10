@@ -1,13 +1,27 @@
-import { menu } from "@/data"
+import { Categories } from "@/types/types"
 import styles from "./page.module.css"
 import Link from "next/link"
 
+const getData = async () => {
+	const response = await fetch("http://localhost:3000/api/categories", {
+		cache: "no-store",
+	})
+
+	if (!response.ok) {
+		throw new Error("Failed!")
+	}
+
+	return response.json()
+}
+
 type Props = {}
 
-const Menu = (props: Props) => {
+const Menu = async (props: Props) => {
+	const categories: Categories = await getData()
+
 	return (
 		<div className={styles.container}>
-			{menu.map((category) => (
+			{categories.map((category) => (
 				<Link
 					key={category.id}
 					href={`/menu/${category.slug}`}
