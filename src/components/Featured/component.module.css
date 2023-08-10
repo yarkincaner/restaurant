@@ -4,7 +4,6 @@
 	color: var(--primary);
 }
 
-
 .wrapper {
 	width: max-content;
 	display: flex;
@@ -19,10 +18,10 @@
 	justify-content: space-around;
 	padding: 1rem;
 	cursor: pointer;
-	-webkit-transition: .15s background-color ease-in;
-	-moz-transition: .15s background-color ease-in;
-	-o-transition: .15s background-color ease-in;
-	transition: .15s background-color ease-in;
+	-webkit-transition: .3s background-color ease-in;
+	-moz-transition: .3s background-color ease-in;
+	-o-transition: .3s background-color ease-in;
+	transition: .3s background-color ease-in;
 }
 
 .item:hover {
@@ -33,17 +32,14 @@
 	position: relative;
 	flex: 1;
 	width: 100%;
+	-webkit-transition: .5s transform;
+	-moz-transition: .5s transform;
+	-o-transition: .5s transform;
+	transition: .5s transform;
 }
 
-.img {
-	-webkit-transition: .3s transform ease-in-out;
-	-moz-transition: .3s transform ease-in-out;
-	-o-transition: .3s transform ease-in-out;
-	transition: .3s transform ease-in-out;
-}
-
-.img:hover {
-	transform: rotate(90deg);
+.imgContainer:hover {
+	transform: rotate(60deg);
 }
 
 .img {

@@ -1,0 +1,60 @@
+.container {
+	padding: 1rem;
+}
+
+.table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: .75rem;
+}
+
+.heads {
+	text-align: left;
+}
+
+.rows {
+	font-size: .875rem;
+}
+
+.row {
+	padding: 1.5rem .25rem;
+}
+
+.rows:nth-child(1) {
+	background-color: #fef2f2 !important;
+}
+
+.rows:nth-child(2n + 1) {
+	background-color: #f3f4f6;
+	color: black;
+}
+
+.hiddenCol {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.hiddenCol {
+		display: block;
+	}
+
+	.rows {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.container {
+		padding: 0 5rem;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.container {
+		padding: 0 10rem;
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	
+}

@@ -1,29 +1,30 @@
-"use client";
-import Image from "next/image";
-import styles from "./component.module.css";
-import { useState } from "react";
-import Link from "next/link";
-import CartIcon from "../CartIcon/CartIcon";
+"use client"
+import Image from "next/image"
+import styles from "./component.module.css"
+import { useState } from "react"
+import Link from "next/link"
+import CartIcon from "../CartIcon/CartIcon"
+import { ThemeSwitcher } from ".."
 
 const links = [
-	{ id: 1, title: "Homepage", url: "/" },
+	{ id: 1, title: "Home", url: "/" },
 	{ id: 2, title: "Menu", url: "/menu" },
 	{ id: 3, title: "Working Hours", url: "/" },
 	{ id: 4, title: "Contact", url: "/" },
-];
+]
 
-type Props = {};
+type Props = {}
 
 const Menu = (props: Props) => {
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(false)
 
 	// TEMPORARY
-	const user = false;
+	const user = false
 
 	const handleClick = () => {
-		setOpen((prev) => !prev);
-		console.log(open);
-	};
+		setOpen((prev) => !prev)
+		console.log(open)
+	}
 
 	return (
 		<div>
@@ -36,6 +37,7 @@ const Menu = (props: Props) => {
 			/>
 			{open && (
 				<div className={styles.menuContainer}>
+					<ThemeSwitcher />
 					{links.map((item) => (
 						<Link
 							className={styles.menuItem}
@@ -67,7 +69,7 @@ const Menu = (props: Props) => {
 				</div>
 			)}
 		</div>
-	);
-};
+	)
+}
 
-export default Menu;
+export default Menu

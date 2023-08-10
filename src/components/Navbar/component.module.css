@@ -5,6 +5,7 @@
 	height: 3rem;
 	padding: 1rem;
 	border-bottom: .125rem solid var(--primary);
+	text-transform: uppercase;
 }
 
 .navItems {
@@ -54,7 +55,6 @@
     display: flex;
 		flex: 1;
 		align-items: center;
-		justify-content: center;
   }
 
 	.logo {

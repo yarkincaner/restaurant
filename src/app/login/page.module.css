@@ -1,0 +1,103 @@
+.mainContainer {
+	padding: 1rem;
+	height: calc(100vh - 6rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	height: 100%;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+	border-radius: .5rem;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--elements);
+}
+
+.imageContainer {
+	position: relative;
+	flex: 1;
+	width: 100%;
+}
+
+.image {
+	object-fit: cover;
+}
+
+.formContainer {
+	flex: 2;
+	padding: 4.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.title {
+	color: var(--text);
+	font-size: 1.25rem;
+}
+
+.signIn {
+	background-color: transparent;
+	color: var(--text);
+	border: 0;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	-webkit-transition: .2s box-shadow ease-in-out, .2s border-radius ease-in-out;
+  -moz-transition: .2s box-shadow ease-in-out, .2s border-radius ease-in-out;
+  -o-transition: .2s box-shadow ease-in-out, .2s border-radius ease-in-out;
+  transition: .2s box-shadow ease-in-out, .2s border-radius ease-in-out;
+}
+
+.signIn:hover {
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+.icon {
+	object-fit: contain;
+}
+
+.contact {
+	font-size: 0.875rem;
+}
+
+.link {
+	text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+	.mainContainer {
+		height: calc(100vh - 9rem);
+	}
+
+	.container {
+		flex-direction: row;
+		height: 70%;
+		width: 100%;
+	}
+	
+	.formContainer {
+		flex: 1;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.container {
+		width: 70%;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.title {
+		font-size: 1.875rem;
+	}
+}
+
+@media screen and (min-width: 1536px) {
+	.container {
+		width: 50%;
+	}
+}

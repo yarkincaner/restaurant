@@ -21,8 +21,8 @@
 }
 
 .dark {
-  --background: hsl(0, 0%, 17%);
-  --elements: hsl(0, 0%, 37%);
+  --background: hsl(0, 0%, 18%);
+  --elements: hsl(0, 0%, 20%);
   --primary: hsl(3, 89%, 64%);
   --secondary: hsl(289, 10%, 10%);
   --text: hsl(0, 0%, 100%);
@@ -72,26 +72,15 @@ button {
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-}
-
-button {
-  border: 0;
-  padding: 1rem;
-  border-radius: .5rem;
-  color: var(--background);
-  background-color: var(--primary);
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  -webkit-transition: .15s border-radius ease, .15s color ease;
-  -moz-transition: .15s border-radius ease, .15s color ease;
-  -o-transition: .15s border-radius ease, .15s color ease;
-  transition: .15s border-radius ease, .15s color ease;
+  -webkit-transition: .2s border-radius ease-in-out, .2s box-shadow ease-in-out;
+  -moz-transition: .2s border-radius ease-in-out, .2s box-shadow ease-in-out;
+  -o-transition: .2s border-radius ease-in-out, .2s box-shadow ease-in-out;
+  transition: .2s border-radius ease-in-out, .2s box-shadow ease-in-out;
 }
 
 button:hover {
   border-radius: 0;
-  color: var(--text);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 }
 
 input, textarea {
