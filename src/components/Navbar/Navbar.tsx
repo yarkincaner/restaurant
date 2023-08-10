@@ -33,7 +33,7 @@ const Navbar = (props: Props) => {
 				<Menu />
 			</div>
 			{/* RIGHT LINKS */}
-			<div className={styles.navItems}>
+			<div className={`${styles.navItems} ${styles.flexEnd}`}>
 				<div className={styles.phone}>
 					<Image src={`/phone.png`} alt="" width={15} height={15} />
 					<span>123 456</span>
