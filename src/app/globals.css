@@ -24,10 +24,10 @@
 }
 
 .theme {
-  -webkit-transition: .5s background ease-in, .5s color ease-in;
-  -moz-transition: .5s background ease-in, .5s color ease-in;
-  -o-transition: .5s background ease-in, .5s color ease-in;
-  transition: .5s background ease-in, .5s color ease-in;
+  -webkit-transition: .5s background-color ease-in;
+  -moz-transition: .5s background-color ease-in;
+  -o-transition: .5s background-color ease-in;
+  transition: .5s background-color ease-in;
 }
 
 .dark {

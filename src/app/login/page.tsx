@@ -10,7 +10,7 @@ const Login = (props: Props) => {
 	return (
 		<div className={styles.mainContainer}>
 			{/* BOX */}
-			<div className={styles.container}>
+			<div className={`${styles.container} theme`}>
 				{/* IMAGE CONTAINER */}
 				<div className={styles.imageContainer}>
 					<Image src={`/loginBg.png`} alt="" fill className={styles.image} />

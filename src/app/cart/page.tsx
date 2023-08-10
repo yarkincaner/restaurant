@@ -37,7 +37,7 @@ const Cart = (props: Props) => {
 					<FontAwesomeIcon icon={faClose} className={styles.icon} />
 				</div>
 			</div>
-			<div className={styles.right}>
+			<div className={`${styles.right} theme`}>
 				<div className={styles.total}>
 					<span>Subtotal (3 items)</span>
 					<span>$81.70</span>

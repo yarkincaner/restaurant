@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { Menu, ThemeSwitcher } from "..";
-import styles from "./component.module.css";
-import CartIcon from "../CartIcon/CartIcon";
-import Image from "next/image";
+import Link from "next/link"
+import { Menu, ThemeSwitcher } from ".."
+import styles from "./component.module.css"
+import CartIcon from "../CartIcon/CartIcon"
+import Image from "next/image"
 
-type Props = {};
+type Props = {}
 
 const Navbar = (props: Props) => {
-	const user = false;
+	const user = false
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} theme`}>
 			{/* LEFT LINKS */}
 			<div className={styles.navItems}>
 				<Link href={`/`} className={styles.navItem}>
@@ -51,7 +51,7 @@ const Navbar = (props: Props) => {
 				<ThemeSwitcher />
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Navbar;
+export default Navbar

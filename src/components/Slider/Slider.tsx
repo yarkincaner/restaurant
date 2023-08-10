@@ -38,7 +38,7 @@ const Slider = (props: Props) => {
 	}, [])
 
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} theme`}>
 			<div className={styles.item}>
 				<h1 className={styles.title}>{data[currentSlide].title}</h1>
 				<button>Order Now</button>
