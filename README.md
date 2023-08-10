@@ -12,6 +12,13 @@ To start the app
 yarn run dev
 ```
 
+Why am i using yarn instead of npm?
+
+- It installs packages in parallel, so it is faster. Npm installs them sequentially
+- Npm saves packages to dependencies when you pass `--save` tag into command. Yarn do this by default.
+- It requires less memory space.
+- Yarn has offline support.
+
 ## Built With
 
 - [![Next][Next.js]][Next-url]
