@@ -35,8 +35,7 @@ const Price = (props: Props) => {
 						style={{
 							backgroundColor:
 								selected === index ? "var(--primary)" : "transparent",
-							color:
-								selected === index ? "var(--background)" : "var(--primary)",
+							color: selected === index ? "var(--white)" : "var(--primary)",
 						}}
 						onClick={() => setSelected(index)}
 					>

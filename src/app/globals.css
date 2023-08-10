@@ -1,11 +1,21 @@
 :root {
   /* colors */
-  --background: hsl(0, 0%, 98%);
-  --elements: hsl(0, 0%, 100%);
-  --primary: hsl(3, 89%, 64%);
-  --secondary: hsl(289, 100%, 98%);
-  --text: hsl(0, 0%, 17%);
-  --input: hsl(0, 0%, 37%);
+  --white: hsl(0, 0%, 98%);
+  --white-lighter: hsl(0, 0%, 100%);
+  --red: hsl(357, 65%, 55%);
+  --green: hsl(150, 100%, 27%);
+  --fuchsia: hsl(289, 100%, 98%);
+  --fuchsia-darker: hsl(289, 10%, 10%);
+  --black: hsl(0, 0%, 17%);
+  --black-lighter: hsl(0, 0%, 20%);
+  
+  /* theme */
+  --background: var(--white);
+  --elements: var(--white-lighter);
+  --primary: var(--red);
+  --secondary: var(--fuchsia);
+  --text: var(--black);
+  --input: var(--black-lighter);
 
   /* sizes */
   --screen-sm: 640px;
@@ -21,12 +31,12 @@
 }
 
 .dark {
-  --background: hsl(0, 0%, 18%);
-  --elements: hsl(0, 0%, 20%);
-  --primary: hsl(3, 89%, 64%);
-  --secondary: hsl(289, 10%, 10%);
-  --text: hsl(0, 0%, 100%);
-  --input: hsl(0, 0%, 98%);
+  --background: var(--black);
+  --elements: var(--black-lighter);
+  --primary: var(--red);
+  --secondary: var(--fuchsia-darker);
+  --text: var(--white-lighter);
+  --input: var(--white);
 }
 
 * {

@@ -19,7 +19,7 @@ const Product = (props: Props) => {
 				</div>
 			)}
 			{/* TEXT CONTAINER */}
-			<div className={styles.item}>
+			<div className={`${styles.item} ${styles.detailsContainer}`}>
 				<h1 className={styles.title}>{singleProduct.title}</h1>
 				<p className={styles.desc}>{singleProduct.desc}</p>
 				<Price

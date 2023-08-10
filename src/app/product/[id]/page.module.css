@@ -28,6 +28,10 @@
 	text-transform: uppercase;
 }
 
+.desc {
+	color: var(--text);
+}
+
 @media (min-width: 768px) {
 	.container {
 		flex-direction: row;

@@ -21,7 +21,7 @@
 	flex-direction: column;
 	justify-content: center;
 	gap: 1rem;
-	background-color: var(--secondary);
+	background-color: var(--elements);
 }
 
 .item {
