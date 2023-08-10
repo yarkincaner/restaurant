@@ -9,13 +9,13 @@
 
 ## Getting Started
 
-To install packages
+#### Installing packages
 
 ```bash
 yarn
 ```
 
-To start the app
+#### Starting the app
 
 First, configure docker file which is located in: `src/docker/docker-compose.yml`
 
@@ -49,7 +49,7 @@ Finally
 yarn run dev
 ```
 
-### Why am i using yarn instead of npm?
+#### Why am i using yarn instead of npm?
 
 - It installs packages in parallel, so it is faster. Npm installs them sequentially
 - Npm saves packages to dependencies when you pass `--save` tag into command. Yarn do this by default.
