@@ -21,6 +21,7 @@
 }
 
 .navItem {
+	cursor: pointer;
 	-webkit-transition: .15s color ease, .15s background-color ease;
   -moz-transition: .15s color ease, .15s background-color ease;
   -o-transition: .15s color ease, .15s background-color ease;

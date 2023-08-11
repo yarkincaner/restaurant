@@ -1,7 +1,22 @@
-import { pizzas } from "@/data"
 import styles from "./page.module.css"
 import Link from "next/link"
 import Image from "next/image"
+import { Product } from "@/types/types"
+
+const getData = async (category: string) => {
+	const response = await fetch(
+		`http://localhost:3000/api/products?cat=${category}`,
+		{
+			cache: "no-store",
+		}
+	)
+
+	if (!response.ok) {
+		throw new Error("Failed!")
+	}
+
+	return response.json()
+}
 
 type Props = {
 	params: {
@@ -9,10 +24,12 @@ type Props = {
 	}
 }
 
-const Category = (props: Props) => {
+const Category = async (props: Props) => {
+	const products: Product[] = await getData(props.params.category)
+
 	return (
 		<div className={styles.container}>
-			{pizzas.map((item) => (
+			{products.map((item) => (
 				<Link className={styles.item} href={`/product/${item.id}`}>
 					{item.img && (
 						<div className={styles.imgContainer}>

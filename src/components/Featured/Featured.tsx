@@ -1,10 +1,24 @@
-import Image from "next/image";
-import styles from "./component.module.css";
-import { featuredProducts } from "@/data";
+import Image from "next/image"
+import styles from "./component.module.css"
+import { Product } from "@/types/types"
 
-type Props = {};
+const getData = async () => {
+	const response = await fetch("http://localhost:3000/api/products", {
+		cache: "no-store",
+	})
 
-const Featured = (props: Props) => {
+	if (!response.ok) {
+		throw new Error("Failed!")
+	}
+
+	return response.json()
+}
+
+type Props = {}
+
+const Featured = async (props: Props) => {
+	const featuredProducts: Product[] = await getData()
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.wrapper}>
@@ -25,7 +39,7 @@ const Featured = (props: Props) => {
 				))}
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Featured;
+export default Featured

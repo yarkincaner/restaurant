@@ -1,3 +1,6 @@
+"use client"
+import { useSession, signIn } from "next-auth/react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import styles from "./page.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -7,6 +10,17 @@ import Link from "next/link"
 type Props = {}
 
 const Login = (props: Props) => {
+	const { data, status } = useSession()
+	const router = useRouter()
+
+	if (status === "loading") {
+		return <p>Loading...</p>
+	}
+
+	if (status === "authenticated") {
+		router.push("/")
+	}
+
 	return (
 		<div className={styles.mainContainer}>
 			{/* BOX */}
@@ -19,7 +33,7 @@ const Login = (props: Props) => {
 				<div className={styles.formContainer}>
 					<h1 className={styles.title}>Welcome</h1>
 					<p>Log into your account or create a new one using social buttons</p>
-					<button className={styles.signIn}>
+					<button className={styles.signIn} onClick={() => signIn("google")}>
 						{/* <FontAwesomeIcon icon={faGoogle} color="#4285f4" /> */}
 						<Image
 							src="/google.png"

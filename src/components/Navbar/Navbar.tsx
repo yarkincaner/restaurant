@@ -3,11 +3,11 @@ import { Menu, ThemeSwitcher } from ".."
 import styles from "./component.module.css"
 import CartIcon from "../CartIcon/CartIcon"
 import Image from "next/image"
+import UserLinks from "./UserLinks"
 
 type Props = {}
 
 const Navbar = (props: Props) => {
-	const user = false
 	return (
 		<div className={`${styles.container} theme`}>
 			{/* LEFT LINKS */}
@@ -38,15 +38,7 @@ const Navbar = (props: Props) => {
 					<Image src={`/phone.png`} alt="" width={15} height={15} />
 					<span>123 456</span>
 				</div>
-				{user ? (
-					<Link href={`/orders`} className={styles.navItem}>
-						Orders
-					</Link>
-				) : (
-					<Link href={`/login`} className={styles.navItem}>
-						Login
-					</Link>
-				)}
+				<UserLinks />
 				<CartIcon />
 				<ThemeSwitcher />
 			</div>
