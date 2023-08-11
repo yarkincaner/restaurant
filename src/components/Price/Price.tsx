@@ -3,45 +3,44 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./component.module.css"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
+import { Product } from "@/types/types"
 
 type Props = {
-	id: number
-	price: number
-	options?: { title: string; additionalPrice: number }[]
+	product: Product
 }
 
-const Price = (props: Props) => {
-	const [total, setTotal] = useState(props.price)
+const Price = ({ product }: Props) => {
+	const [total, setTotal] = useState(product.price)
 	const [quantity, setQuantity] = useState(1)
 	const [selected, setSelected] = useState(0)
 
 	useEffect(() => {
-		setTotal(
-			quantity *
-				(props.options
-					? props.price + props.options[selected].additionalPrice
-					: props.price)
-		)
-	}, [quantity, selected, props.options, props.price])
+		if (product.options?.length) {
+			setTotal(
+				quantity * product.price + product.options[selected].additionalPrice
+			)
+		}
+	}, [quantity, selected, product])
 
 	return (
 		<div className={styles.container}>
-			<h2 className={styles.price}>${total.toFixed(2)}</h2>
+			<h2 className={styles.price}>${total}</h2>
 			<div className={styles.options}>
-				{props.options?.map((option, index) => (
-					<button
-						className={styles.option}
-						key={option.title}
-						style={{
-							backgroundColor:
-								selected === index ? "var(--primary)" : "transparent",
-							color: selected === index ? "var(--white)" : "var(--primary)",
-						}}
-						onClick={() => setSelected(index)}
-					>
-						{option.title}
-					</button>
-				))}
+				{product.options?.length &&
+					product.options?.map((option, index) => (
+						<button
+							className={styles.option}
+							key={option.title}
+							style={{
+								backgroundColor:
+									selected === index ? "var(--primary)" : "transparent",
+								color: selected === index ? "var(--white)" : "var(--primary)",
+							}}
+							onClick={() => setSelected(index)}
+						>
+							{option.title}
+						</button>
+					))}
 			</div>
 			<div className={styles.quantityContainer}>
 				<div className={styles.quantity}>

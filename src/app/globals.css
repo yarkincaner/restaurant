@@ -8,6 +8,8 @@
   --fuchsia-darker: hsl(289, 10%, 10%);
   --black: hsl(0, 0%, 17%);
   --black-lighter: hsl(0, 0%, 20%);
+  --error-color: hsl(0, 86%, 97%);
+  /* --error-color-darker: hsl(0, 86%, 97%); */
   
   /* theme */
   --background: var(--white);
@@ -16,6 +18,7 @@
   --secondary: var(--fuchsia);
   --text: var(--black);
   --input: var(--black-lighter);
+  --error: var(--error-color);
 
   /* sizes */
   --screen-sm: 640px;

@@ -1,6 +1,8 @@
 "use client"
 
 import { ReactNode, createContext, useState } from "react"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 type ThemeContextType = {
 	toggle: () => void
@@ -25,7 +27,14 @@ export const ThemeProvider = ({ children }: IProvider) => {
 
 	return (
 		<ThemeContext.Provider value={{ toggle, mode }}>
-			<body className={`theme ${mode}`}>{children}</body>
+			<body className={`theme ${mode}`}>
+				{children}
+				<ToastContainer
+					position="bottom-right"
+					theme={mode === "dark" ? "dark" : "light"}
+					autoClose={3000}
+				/>
+			</body>
 		</ThemeContext.Provider>
 	)
 }

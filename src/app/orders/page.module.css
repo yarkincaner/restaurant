@@ -27,9 +27,13 @@
 	gap: 1rem;
 }
 
-.rows:nth-child(1) {
-	background-color: #fef2f2 !important;
+.delivered {
+	background-color: var(--error) !important;
 }
+
+/* .rows:nth-child(1) {
+	background-color: #fef2f2 !important;
+} */
 
 .rows:nth-child(1) > .row > .form > .input {
 	color: var(--black);

@@ -9,28 +9,28 @@ const Cart = (props: Props) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.left}>
-				<div className={styles.item}>
+				<div className={`${styles.item} theme`}>
 					<Image src={`/temporary/p1.png`} alt="" width={100} height={100} />
 					<div>
-						<h1 className={styles.cartItemTi1tle}>Sicilian</h1>
+						<h1 className={styles.cartItemTitle}>Sicilian</h1>
 						<span>Large</span>
 					</div>
 					<h2>$79.90</h2>
 					<FontAwesomeIcon icon={faClose} className={styles.icon} />
 				</div>
-				<div className={styles.item}>
+				<div className={`${styles.item} theme`}>
 					<Image src={`/temporary/p1.png`} alt="" width={100} height={100} />
 					<div>
-						<h1 className={styles.cartItemTi1tle}>Sicilian</h1>
+						<h1 className={styles.cartItemTitle}>Sicilian</h1>
 						<span>Large</span>
 					</div>
 					<h2>$79.90</h2>
 					<FontAwesomeIcon icon={faClose} className={styles.icon} />
 				</div>
-				<div className={styles.item}>
+				<div className={`${styles.item} theme`}>
 					<Image src={`/temporary/p1.png`} alt="" width={100} height={100} />
 					<div>
-						<h1 className={styles.cartItemTi1tle}>Sicilian</h1>
+						<h1 className={styles.cartItemTitle}>Sicilian</h1>
 						<span>Large</span>
 					</div>
 					<h2>$79.90</h2>

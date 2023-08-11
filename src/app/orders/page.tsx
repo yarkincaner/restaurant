@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { FormEvent } from "react"
+import { toast } from "react-toastify"
 
 type Props = {}
 
@@ -47,6 +48,7 @@ const Orders = (props: Props) => {
 		const status = input.value
 
 		mutation.mutate({ id, status })
+		toast.success("The order status has been changed!")
 	}
 
 	if (isLoading || status === "loading") return "Loading..."
@@ -65,7 +67,12 @@ const Orders = (props: Props) => {
 				</thead>
 				<tbody>
 					{data.map((item: Order) => (
-						<tr key={item.id} className={styles.rows}>
+						<tr
+							key={item.id}
+							className={`${styles.rows} ${
+								item.status !== "delivered" && `${styles.delivered}`
+							}`}
+						>
 							<td className={`${styles.hiddenCol} ${styles.row}`}>{item.id}</td>
 							<td className={`${styles.row}`}>
 								{item.createdAt.toString().slice(0, 10)}
