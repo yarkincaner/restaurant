@@ -20,13 +20,38 @@
 	padding: 1.5rem .25rem;
 }
 
+.form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
 .rows:nth-child(1) {
 	background-color: #fef2f2 !important;
 }
 
+.rows:nth-child(1) > .row > .form > .input {
+	color: var(--black);
+	border-color: var(--black);
+}
+
+.rows:nth-child(1) > .row > .form > .input::placeholder {
+	color: var(--black-light);
+}
+
 .rows:nth-child(2n + 1) {
 	background-color: #f3f4f6;
-	color: black;
+	color: var(--black);
+}
+
+.rows:nth-child(2n + 1) > .row > .form > .input {
+	color: var(--black);
+	border-color: var(--black);
+}
+
+.rows:nth-child(2n + 1) > .row > .form > .input::placeholder {
+	color: var(--black-light);
 }
 
 .hiddenCol {

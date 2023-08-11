@@ -1,4 +1,10 @@
-import { AuthProvider, Footer, Navbar, Notification } from "@/components"
+import {
+	AuthProvider,
+	Footer,
+	Navbar,
+	Notification,
+	QueryProvider,
+} from "@/components"
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -23,12 +29,14 @@ export default function RootLayout({
 		<html lang="en">
 			<ThemeProvider>
 				<AuthProvider>
-					<div className={`${inter.className}`}>
-						<Notification />
-						<Navbar />
-						{children}
-						<Footer />
-					</div>
+					<QueryProvider>
+						<div className={`${inter.className}`}>
+							<Notification />
+							<Navbar />
+							{children}
+							<Footer />
+						</div>
+					</QueryProvider>
 				</AuthProvider>
 			</ThemeProvider>
 		</html>
