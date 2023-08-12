@@ -4,6 +4,8 @@ import styles from "./component.module.css"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
 import { Product } from "@/types/types"
+import { useCartStore } from "@/utils/store"
+import { toast } from "react-toastify"
 
 type Props = {
 	product: Product
@@ -14,6 +16,12 @@ const Price = ({ product }: Props) => {
 	const [quantity, setQuantity] = useState(1)
 	const [selected, setSelected] = useState(0)
 
+	const { addToCart } = useCartStore()
+
+	useEffect(() => {
+		useCartStore.persist.rehydrate()
+	}, [])
+
 	useEffect(() => {
 		if (product.options?.length) {
 			setTotal(
@@ -21,6 +29,21 @@ const Price = ({ product }: Props) => {
 			)
 		}
 	}, [quantity, selected, product])
+
+	const handleCart = () => {
+		addToCart({
+			id: product.id,
+			title: product.title,
+			img: product.img,
+			price: total,
+			...(product.options?.length && {
+				optionTitle: product.options[selected].title,
+			}),
+			quantity: quantity,
+		})
+
+		toast.success("The product added to the cart!")
+	}
 
 	return (
 		<div className={styles.container}>
@@ -59,7 +82,9 @@ const Price = ({ product }: Props) => {
 						/>
 					</div>
 				</div>
-				<button className={styles.button}>Add to Cart</button>
+				<button className={styles.button} onClick={handleCart}>
+					Add to Cart
+				</button>
 			</div>
 		</div>
 	)

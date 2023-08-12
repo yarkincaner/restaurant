@@ -1,12 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./component.module.css";
+"use client"
+import Image from "next/image"
+import Link from "next/link"
+import styles from "./component.module.css"
+import { useCartStore } from "@/utils/store"
+import { useEffect } from "react"
 
 type Props = {
-	handleClick?: () => void;
-};
+	handleClick?: () => void
+}
 
 const CartIcon = (props: Props) => {
+	const { totalItems } = useCartStore()
+
+	useEffect(() => {
+		useCartStore.persist.rehydrate()
+	}, [])
+
 	return (
 		<Link
 			href={`/cart`}
@@ -16,9 +25,9 @@ const CartIcon = (props: Props) => {
 			<div className={styles.cartIcon}>
 				<Image src={`/cart.png`} alt="" fill />
 			</div>
-			<span>Cart (3)</span>
+			<span>Cart ({totalItems})</span>
 		</Link>
-	);
-};
+	)
+}
 
-export default CartIcon;
+export default CartIcon
