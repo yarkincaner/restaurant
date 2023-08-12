@@ -1,0 +1,25 @@
+.container{
+	min-height: calc(100vh - 6rem);
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		min-height: calc(100vh - 15rem);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.container {
+		padding: 1rem 5rem;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.container {
+		padding: 1rem 10rem;
+	}
+}

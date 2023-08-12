@@ -5,15 +5,43 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClose } from "@fortawesome/free-solid-svg-icons"
 import { useCartStore } from "@/utils/store"
 import { useEffect } from "react"
+import { useSession } from "next-auth/react"
+import { useRouter } from "next/navigation"
 
 type Props = {}
 
 const Cart = (props: Props) => {
 	const { products, totalItems, totalPrice, removeFromCart } = useCartStore()
+	const { data: session } = useSession()
+	const router = useRouter()
 
 	useEffect(() => {
 		useCartStore.persist.rehydrate()
 	}, [])
+
+	const handleCheckout = async () => {
+		if (!session) {
+			router.push("/")
+		} else {
+			try {
+				const res = await fetch("http://localhost:3000/api/orders", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						price: totalPrice,
+						products,
+						status: "Not Paid!",
+						userEmail: session.user.email,
+					}),
+				})
+
+				const data = await res.json()
+				router.push(`/pay/${data.id}`)
+			} catch (error) {
+				console.log(error)
+			}
+		}
+	}
 
 	return (
 		<div className={styles.container}>
@@ -56,7 +84,9 @@ const Cart = (props: Props) => {
 					<span>TOTAL (INCL VAT)</span>
 					<span style={{ fontWeight: "bold" }}>${totalPrice}</span>
 				</div>
-				<button className={styles.button}>Chekout</button>
+				<button className={styles.button} onClick={handleCheckout}>
+					Chekout
+				</button>
 			</div>
 		</div>
 	)

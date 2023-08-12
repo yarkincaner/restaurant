@@ -10,7 +10,7 @@ import Link from "next/link"
 type Props = {}
 
 const Login = (props: Props) => {
-	const { data, status } = useSession()
+	const { status } = useSession()
 	const router = useRouter()
 
 	if (status === "loading") {
