@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.css"
-import { Price } from "@/components"
+import { DeleteButton, Price } from "@/components"
 import { Product } from "@/types/types"
 
 const getData = async (id: string) => {
@@ -38,6 +38,8 @@ const Product = async (props: Props) => {
 				<p className={styles.desc}>{singleProduct.desc}</p>
 				<Price product={singleProduct} />
 			</div>
+			{/* DELETE BUTTON */}
+			<DeleteButton id={singleProduct.id} />
 		</div>
 	)
 }
