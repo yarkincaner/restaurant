@@ -106,15 +106,19 @@ input, textarea {
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
-  -webkit-transition: border-color .15s ease-in;
-  -moz-transition: border-color .15s ease-in;
-  -o-transition: border-color .15s ease-in;
-  transition: border-color .15s ease-in;
+  -webkit-transition: border-color .2s ease-in;
+  -moz-transition: border-color .2s ease-in;
+  -o-transition: border-color .2s ease-in;
+  transition: border-color .2s ease-in;
 }
 
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--text);
+}
+
+textarea {
+  resize: vertical;
 }
 
 ::placeholder {

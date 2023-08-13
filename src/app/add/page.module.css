@@ -1,0 +1,51 @@
+.form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+.item {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
+
+.optionsContainer {
+	background-color: var(--elements);
+	padding: 1rem;
+	border-radius: .5rem;
+}
+
+.optionButton {
+	padding: 1rem;
+	background-color: var(--primary);
+	color: var(--white);
+	cursor: pointer;
+	width: max-content;
+	align-self: flex-end;
+	border-radius: .5rem;
+	-webkit-transition: .2s border-radius ease-in-out;
+  -moz-transition: .2s border-radius ease-in-out;
+  -o-transition: .2s border-radius ease-in-out;
+  transition: .2s border-radius ease-in-out;
+}
+
+.optionButton:hover {
+	border-radius: 0;
+}
+
+.option {
+	border: 1px solid var(--primary);
+	border-radius: .5rem;
+	color: var(--text);
+	padding: .5rem;
+	cursor: pointer;
+	width: max-content;
+}
+
+.hidden {
+	display: none;
+}
