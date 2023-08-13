@@ -3,9 +3,12 @@ import styles from "./component.module.css"
 import { Product } from "@/types/types"
 
 const getData = async () => {
-	const response = await fetch("http://localhost:3000/api/products", {
-		cache: "no-store",
-	})
+	const response = await fetch(
+		`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+		{
+			cache: "no-store",
+		}
+	)
 
 	if (!response.ok) {
 		throw new Error("Failed!")

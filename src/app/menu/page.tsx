@@ -3,9 +3,12 @@ import styles from "./page.module.css"
 import Link from "next/link"
 
 const getData = async () => {
-	const response = await fetch("http://localhost:3000/api/categories", {
-		cache: "no-store",
-	})
+	const response = await fetch(
+		`${process.env.NEXT_PUBLIC_BASE_URL}/api/categories`,
+		{
+			cache: "no-store",
+		}
+	)
 
 	if (!response.ok) {
 		throw new Error("Failed!")

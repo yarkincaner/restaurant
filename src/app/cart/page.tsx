@@ -24,16 +24,19 @@ const Cart = (props: Props) => {
 			router.push("/")
 		} else {
 			try {
-				const res = await fetch("http://localhost:3000/api/orders", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
-						price: totalPrice,
-						products,
-						status: "Not Paid!",
-						userEmail: session.user.email,
-					}),
-				})
+				const res = await fetch(
+					`${process.env.NEXT_PUBLIC_BASE_URL}/api/orders`,
+					{
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({
+							price: totalPrice,
+							products,
+							status: "Not Paid!",
+							userEmail: session.user.email,
+						}),
+					}
+				)
 
 				const data = await res.json()
 				router.push(`/pay/${data.id}`)

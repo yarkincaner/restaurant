@@ -30,7 +30,7 @@ const Menu = (props: Props) => {
 			<input type="checkbox" id={styles.menu} />
 			<label
 				className={`${styles.hamb} ${styles.button} ${open && styles.active}`}
-				for="menu"
+				htmlFor="menu"
 				onClick={handleClick}
 			>
 				<span className={`${styles.srOnly}`}>Open Menu</span>

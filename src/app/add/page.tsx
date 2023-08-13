@@ -72,7 +72,14 @@ const AddPage = () => {
 
 		const res = await fetch("https://api.cloudinary.com/v1_1/dgpwtxipn/image", {
 			method: "POST",
-			headers: { "Content-Type": "multipart/form-data" },
+			headers: {
+				"Content-Type": "multipart/form-data",
+				"Access-Control-Allow-Origin": "http://localhost:3000" || "*",
+				"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+				"Access-Control-Allow-Headers":
+					"Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version",
+				"Access-Control-Max-Age": "86400",
+			},
 			body: data,
 		})
 
@@ -85,14 +92,17 @@ const AddPage = () => {
 
 		try {
 			const url = await upload()
-			const res = await fetch("http://localhost:3000/api/products", {
-				method: "POST",
-				body: JSON.stringify({
-					img: url,
-					...inputs,
-					options,
-				}),
-			})
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+				{
+					method: "POST",
+					body: JSON.stringify({
+						img: url,
+						...inputs,
+						options,
+					}),
+				}
+			)
 
 			const data = await res.json()
 

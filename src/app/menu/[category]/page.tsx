@@ -5,7 +5,7 @@ import { Product } from "@/types/types"
 
 const getData = async (category: string) => {
 	const response = await fetch(
-		`http://localhost:3000/api/products?cat=${category}`,
+		`${process.env.NEXT_PUBLIC_BASE_URL}/api/products?cat=${category}`,
 		{
 			cache: "no-store",
 		}

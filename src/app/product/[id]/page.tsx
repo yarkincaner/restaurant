@@ -4,9 +4,12 @@ import { DeleteButton, Price } from "@/components"
 import { Product } from "@/types/types"
 
 const getData = async (id: string) => {
-	const response = await fetch(`http://localhost:3000/api/products/${id}`, {
-		cache: "no-store",
-	})
+	const response = await fetch(
+		`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/${id}`,
+		{
+			cache: "no-store",
+		}
+	)
 
 	if (!response.ok) {
 		throw new Error("Failed!")
