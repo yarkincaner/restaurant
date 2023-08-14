@@ -9,7 +9,7 @@ type Props = {}
 
 const Navbar = (props: Props) => {
 	return (
-		<div className={`${styles.container} theme`}>
+		<nav className={`${styles.container} theme`}>
 			{/* LEFT LINKS */}
 			<div className={styles.navItems}>
 				<Link href={`/`} className={styles.navItem}>
@@ -42,7 +42,7 @@ const Navbar = (props: Props) => {
 				<CartIcon />
 				<ThemeSwitcher />
 			</div>
-		</div>
+		</nav>
 	)
 }
 

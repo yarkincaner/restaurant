@@ -5,6 +5,8 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import React, { useState } from "react"
 import styles from "./page.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons"
 
 type Inputs = {
 	title: string
@@ -117,7 +119,8 @@ const AddPage = () => {
 				<div className={styles.itemGroup}>
 					<div className={styles.item}>
 						<label htmlFor="file" className={styles.upload}>
-							<Image src="/upload.png" alt="" width={30} height={20} />
+							<FontAwesomeIcon icon={faCloudArrowUp} />
+							{/* <Image src="/upload.png" alt="" width={30} height={20} /> */}
 							<span>{file ? file.name : "Upload Image"}</span>
 						</label>
 						<input

@@ -1,17 +1,17 @@
-import Link from "next/link";
-import styles from "./component.module.css";
+import Link from "next/link"
+import styles from "./component.module.css"
 
-type Props = {};
+type Props = {}
 
 const Footer = (props: Props) => {
 	return (
-		<div className={styles.container}>
+		<footer className={styles.container}>
 			<Link href={`/`} className={styles.link}>
 				RESTAURANT
 			</Link>
 			<p>© ALL RIGHTS RESERVED.</p>
-		</div>
-	);
-};
+		</footer>
+	)
+}
 
-export default Footer;
+export default Footer

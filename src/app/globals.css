@@ -3,6 +3,7 @@
   --white: hsl(0, 0%, 98%);
   --white-lighter: hsl(0, 0%, 100%);
   --red: hsl(357, 65%, 55%);
+  --red-lighter: hsl(357, 79%, 75%);
   --green: hsl(150, 100%, 27%);
   --fuchsia: hsl(289, 100%, 98%);
   --fuchsia-darker: hsl(289, 10%, 10%);
@@ -36,7 +37,7 @@
 .dark {
   --background: var(--black);
   --elements: var(--black-lighter);
-  --primary: var(--red);
+  --primary: var(--red-lighter);
   --secondary: var(--fuchsia-darker);
   --text: var(--white-lighter);
   --input: var(--white);

@@ -1,13 +1,13 @@
-import styles from "./component.module.css";
+import styles from "./component.module.css"
 
-type Props = {};
+type Props = {}
 
 const Notification = (props: Props) => {
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} theme`}>
 			<p>Free delivery for all orders over $50. Order your food now!</p>
 		</div>
-	);
-};
+	)
+}
 
-export default Notification;
+export default Notification
