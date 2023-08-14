@@ -21,6 +21,10 @@ const Navbar = (props: Props) => {
 				<Link href={`/contact`} className={styles.navItem}>
 					Contact
 				</Link>
+				<div className={styles.phone}>
+					<Image src={`/phone.png`} alt="" width={15} height={15} />
+					<span>123 456</span>
+				</div>
 			</div>
 			{/* LOGO */}
 			<div className={styles.logoContainer}>
@@ -34,10 +38,6 @@ const Navbar = (props: Props) => {
 			</div>
 			{/* RIGHT LINKS */}
 			<div className={`${styles.navItems} ${styles.flexEnd}`}>
-				<div className={styles.phone}>
-					<Image src={`/phone.png`} alt="" width={15} height={15} />
-					<span>123 456</span>
-				</div>
 				<UserLinks />
 				<CartIcon />
 				<ThemeSwitcher />

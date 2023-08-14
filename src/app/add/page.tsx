@@ -26,6 +26,7 @@ const AddPage = () => {
 		price: 0,
 		catSlug: "",
 	})
+	const [isFeatured, setIsFeatured] = useState<boolean>(false)
 
 	const [option, setOption] = useState<Option>({
 		title: "",
@@ -94,6 +95,7 @@ const AddPage = () => {
 						img: url,
 						...inputs,
 						options,
+						isFeatured: isFeatured,
 					}),
 				}
 			)
@@ -109,27 +111,31 @@ const AddPage = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit} className={styles.form}>
-				<h1>Add New Product</h1>
-				<div className={styles.item}>
-					<label htmlFor="file">
-						<Image src="/upload.png" alt="" width={30} height={20} />
-						<span>Upload Image</span>
-					</label>
-					<input
-						type="file"
-						onChange={handleChangeImg}
-						id="file"
-						className={styles.hidden}
-					/>
-				</div>
-				<div className={styles.item}>
-					<label>Title</label>
-					<input
-						type="text"
-						placeholder="Bella Napoli"
-						name="title"
-						onChange={handleChange}
-					/>
+				<h1 style={{ textAlign: "center", padding: "1rem" }}>
+					Add New Product
+				</h1>
+				<div className={styles.itemGroup}>
+					<div className={styles.item}>
+						<label htmlFor="file" className={styles.upload}>
+							<Image src="/upload.png" alt="" width={30} height={20} />
+							<span>{file ? file.name : "Upload Image"}</span>
+						</label>
+						<input
+							type="file"
+							onChange={handleChangeImg}
+							id="file"
+							className={styles.hidden}
+						/>
+					</div>
+					<div className={styles.item}>
+						<label>Title</label>
+						<input
+							type="text"
+							placeholder="Bella Napoli"
+							name="title"
+							onChange={handleChange}
+						/>
+					</div>
 				</div>
 				<div className={styles.item}>
 					<label>Description</label>
@@ -140,63 +146,76 @@ const AddPage = () => {
 						onChange={handleChange}
 					/>
 				</div>
-				<div className={styles.item}>
-					<label>Price</label>
-					<input
-						type="number"
-						placeholder="29"
-						name="price"
-						onChange={handleChange}
-					/>
-				</div>
-				<div className={styles.item}>
-					<label>Category</label>
-					<input
-						type="text"
-						placeholder="pizzas"
-						name="catSlug"
-						onChange={handleChange}
-					/>
-				</div>
-				<div className={`${styles.item} ${styles.optionsContainer}`}>
-					<label>Options</label>
+				<div className={styles.itemGroup}>
 					<div className={styles.item}>
-						<input
-							type="text"
-							placeholder="Title"
-							name="title"
-							onChange={changeOption}
-						/>
+						<label>Price</label>
 						<input
 							type="number"
-							placeholder="Additional Price"
-							name="additionalPrice"
-							onChange={changeOption}
+							placeholder="29"
+							name="price"
+							onChange={handleChange}
 						/>
-						<div
-							className={styles.optionButton}
-							onClick={() => setOptions((prev) => [...prev, option])}
-						>
-							Add Option
-						</div>
 					</div>
-					<div>
-						{options.map((opt) => (
-							<div
-								className={styles.option}
-								key={opt.title}
-								onClick={() =>
-									setOptions((prev) =>
-										prev.filter((item) => item.title !== opt.title)
-									)
-								}
-							>
-								<span>{opt.title}</span>
-								<span> (+ ${opt.additionalPrice})</span>
-							</div>
-						))}
+					<div className={styles.item}>
+						<label>Category</label>
+						<input
+							type="text"
+							placeholder="pizzas"
+							name="catSlug"
+							onChange={handleChange}
+						/>
 					</div>
 				</div>
+				<div className={`${styles.item} theme`}>
+					<label>Options</label>
+					<div className={styles.item}>
+						<div className={styles.itemGroup}>
+							<input
+								type="text"
+								placeholder="Title"
+								name="title"
+								onChange={changeOption}
+							/>
+							<input
+								type="number"
+								placeholder="Additional Price"
+								name="additionalPrice"
+								onChange={changeOption}
+							/>
+						</div>
+						<div className={styles.itemGroup}>
+							<div
+								className={styles.optionButton}
+								onClick={() => setOptions((prev) => [...prev, option])}
+							>
+								Add Option
+							</div>
+							{options.map((opt) => (
+								<div
+									className={styles.option}
+									key={opt.title}
+									onClick={() =>
+										setOptions((prev) =>
+											prev.filter((item) => item.title !== opt.title)
+										)
+									}
+								>
+									<span>{opt.title}</span>
+									<span> (+ ${opt.additionalPrice})</span>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+				<label className={styles.checkbox}>
+					<input
+						type="checkbox"
+						name="isFeatured"
+						checked={isFeatured}
+						onChange={() => setIsFeatured((prev) => !prev)}
+					/>
+					<span style={{ flexShrink: "0" }}>Is Featured?</span>
+				</label>
 				<div className={styles.item}>
 					<button type="submit">Submit</button>
 				</div>

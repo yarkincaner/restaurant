@@ -12,7 +12,7 @@ type Props = {
 }
 
 const Price = ({ product }: Props) => {
-	const [total, setTotal] = useState(product.price)
+	const [total, setTotal] = useState<number>(product.price)
 	const [quantity, setQuantity] = useState(1)
 	const [selected, setSelected] = useState(0)
 
@@ -25,7 +25,7 @@ const Price = ({ product }: Props) => {
 	useEffect(() => {
 		if (product.options?.length) {
 			setTotal(
-				quantity * product.price + product.options[selected].additionalPrice
+				quantity * +product.price + +product.options[selected].additionalPrice
 			)
 		}
 	}, [quantity, selected, product])

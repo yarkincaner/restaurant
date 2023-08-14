@@ -6,12 +6,17 @@ import styles from "./component.module.css"
 type Props = {}
 
 const UserLinks = (props: Props) => {
-	const { status } = useSession()
+	const { status, data: session } = useSession()
 
 	return (
 		<div>
 			{status === "authenticated" ? (
 				<div style={{ display: "flex", gap: "1rem" }}>
+					{session.user.isAdmin && (
+						<Link href={`/add`} className={styles.navItem}>
+							Add
+						</Link>
+					)}
 					<Link href={`/orders`} className={styles.navItem}>
 						Orders
 					</Link>

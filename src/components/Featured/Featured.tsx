@@ -1,6 +1,7 @@
 import Image from "next/image"
 import styles from "./component.module.css"
 import { Product } from "@/types/types"
+import Link from "next/link"
 
 const getData = async () => {
 	const response = await fetch(
@@ -26,7 +27,11 @@ const Featured = async (props: Props) => {
 		<div className={styles.container}>
 			<div className={styles.wrapper}>
 				{featuredProducts.map((product) => (
-					<div key={product.id} className={styles.item}>
+					<Link
+						href={`/product/${product.id}`}
+						key={product.id}
+						className={styles.item}
+					>
 						{product.img && (
 							<div className={styles.imgContainer}>
 								<Image src={product.img} alt="" fill className={styles.img} />
@@ -38,7 +43,7 @@ const Featured = async (props: Props) => {
 							<span className={styles.price}>${product.price}</span>
 							<button>Add to Cart</button>
 						</div>
-					</div>
+					</Link>
 				))}
 			</div>
 		</div>
