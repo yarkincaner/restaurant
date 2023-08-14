@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, createContext, useState } from "react"
+import { ReactNode, createContext, useEffect, useState } from "react"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
@@ -22,8 +22,28 @@ export const ThemeProvider = ({ children }: IProvider) => {
 	const [mode, setMode] = useState<"dark" | "light">("light")
 
 	const toggle = () => {
-		setMode((prev) => (prev === "dark" ? "light" : "dark"))
+		switch (mode) {
+			case "light":
+				localStorage.setItem("darkTheme", "dark")
+				setMode("dark")
+				break
+			case "dark":
+				localStorage.setItem("darkTheme", "light")
+				setMode("light")
+		}
 	}
+
+	useEffect(() => {
+		const storedPreference = localStorage.getItem("darkTheme")
+		switch (storedPreference) {
+			case "dark":
+				setMode("dark")
+				break
+			case "light":
+				setMode("light")
+				break
+		}
+	}, [])
 
 	return (
 		<ThemeContext.Provider value={{ toggle, mode }}>
