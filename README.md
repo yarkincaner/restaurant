@@ -1,4 +1,4 @@
-## Built With
+### Built With
 
 - [![Next][Next.js]][Next-url]
 - [![Typescript][Typescript]][Typescript-url]
@@ -9,13 +9,13 @@
 
 ## Getting Started
 
-#### Installing packages
+### Installing packages
 
 ```bash
 yarn
 ```
 
-#### Starting the app
+### Starting the app
 
 First, configure docker file which is located in: `src/docker/docker-compose.yml`
 
@@ -55,6 +55,12 @@ yarn run dev
 - Npm saves packages to dependencies when you pass `--save` tag into command. Yarn do this by default.
 - It requires less memory space.
 - Yarn has offline support.
+
+#### Acknowledgments
+
+- [Lama Dev](https://youtu.be/aYzT06aQkGI)
+- [Cloudinary](https://cloudinary.com/)
+- [Font Awesome](https://fontawesome.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

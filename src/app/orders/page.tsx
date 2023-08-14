@@ -72,7 +72,7 @@ const Orders = (props: Props) => {
 						<tr
 							key={item.id}
 							className={`${styles.rows} ${
-								item.status !== "delivered" && `${styles.delivered}`
+								item.status !== "delivered" && `${styles.notDelivered}`
 							}`}
 						>
 							<td className={`${styles.hiddenCol} ${styles.row}`}>{item.id}</td>

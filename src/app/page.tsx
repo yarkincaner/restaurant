@@ -1,12 +1,12 @@
-import styles from "./page.module.css";
-import { Featured, Offer, Slider } from "@/components";
+import styles from "./page.module.css"
+import { Featured, Offer, Slider } from "@/components"
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
+		<main>
 			<Slider />
 			<Featured />
 			<Offer />
 		</main>
-	);
+	)
 }

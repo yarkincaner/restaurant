@@ -47,6 +47,9 @@
 	background-color: var(--primary);
 	border-radius: .5rem;
 	padding: .25rem;
+	-webkit-transition: .15s border-radius ease;
+	-moz-transition: .15s border-radius ease;
+	-o-transition: .15s border-radius ease;
 	transition: .15s border-radius ease;
 }
 
