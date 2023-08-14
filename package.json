@@ -27,6 +27,7 @@
     "eslint-config-next": "13.4.13",
     "next": "13.4.13",
     "next-auth": "^4.22.5",
+    "next-cloudinary": "^4.18.0",
     "prisma": "^5.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

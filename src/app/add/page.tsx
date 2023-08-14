@@ -64,24 +64,18 @@ const AddPage = () => {
 		setFile(item)
 	}
 
-	// TODO: Fix the error: "fetch has been blocked by CORS policy. No 'Access-Control-Allow-Origin' header is present on the requested resource"
 	const upload = async () => {
 		const data = new FormData()
 		data.append("file", file!)
 		data.append("upload_preset", "restaurant")
 
-		const res = await fetch("https://api.cloudinary.com/v1_1/dgpwtxipn/image", {
-			method: "POST",
-			headers: {
-				"Content-Type": "multipart/form-data",
-				"Access-Control-Allow-Origin": "http://localhost:3000" || "*",
-				"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-				"Access-Control-Allow-Headers":
-					"Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version",
-				"Access-Control-Max-Age": "86400",
-			},
-			body: data,
-		})
+		const res = await fetch(
+			`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+			{
+				method: "POST",
+				body: data,
+			}
+		)
 
 		const resData = await res.json()
 		return resData.url
