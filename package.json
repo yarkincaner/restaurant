@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"yarn server\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "cd src/docker && docker compose up"
+    "server": "cd src/docker && docker compose up",
+    "vercel-build": "prisma generate && npx prisma migrate dev && next build",
+    "prisma:generate": "prisma generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",

@@ -30,7 +30,11 @@ const Category = async (props: Props) => {
 	return (
 		<div className={styles.container}>
 			{products.map((item) => (
-				<Link className={styles.item} href={`/product/${item.id}`}>
+				<Link
+					key={item.id}
+					className={styles.item}
+					href={`/product/${item.id}`}
+				>
 					{item.img && (
 						<div className={styles.imgContainer}>
 							<Image src={item.img} alt="" fill className={styles.img} />

@@ -3,13 +3,25 @@
 
 // TO START PRISMA STUDIO: "npx prisma studio"
 
+// FOR DEVELOPMENT
+// generator client {
+//   provider = "prisma-client-js"
+// }
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
+// FOR PRODUCTION
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["jsonProtocol"]
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("POSTGRES_PRISMA_URL") // uses connection pooling
 }
 
 // Auth.js models
